@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :rankings
   resources :tournaments
   devise_for :users
+  root 'votes#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

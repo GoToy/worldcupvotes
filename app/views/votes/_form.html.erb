@@ -13,17 +13,18 @@
 
   <div class="field">
     <%= f.label :user_id %>
+    <%= @user.username %>    
     <%= f.text_field :user_id %>
   </div>
 
   <div class="field">
     <%= f.label :tournament_id %>
-    <%= f.text_field :tournament_id %>
+    <%= f.collection_select :tournament_id, Tournament.all, :id, :name %>
   </div>
 
   <div class="field">
     <%= f.label :team_id %>
-    <%= f.text_field :team_id %>
+    <%= f.collection_select :team_id, Team.all, :id, :name, :prompt => "--国を選んでください--" %>
   </div>
 
   <div class="actions">
