@@ -1,0 +1,2 @@
+module JapanVotesHelper
+end

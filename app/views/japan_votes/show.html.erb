@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @japan_vote.user %>
+</p>
+
+<p>
+  <strong>Tournament:</strong>
+  <%= @japan_vote.tournament %>
+</p>
+
+<p>
+  <strong>Ranking:</strong>
+  <%= @japan_vote.ranking %>
+</p>
+
+<%= link_to 'Edit', edit_japan_vote_path(@japan_vote) %> |
+<%= link_to 'Back', japan_votes_path %>
