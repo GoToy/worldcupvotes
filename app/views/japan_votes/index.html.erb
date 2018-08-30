@@ -2,6 +2,9 @@
 
 <h1>Japan Votes</h1>
 
+<%= bar_chart @japan_votes.joins(:ranking).group(:name).count %>
+
+
 <table>
   <thead>
     <tr>
@@ -15,9 +18,9 @@
   <tbody>
     <% @japan_votes.each do |japan_vote| %>
       <tr>
-        <td><%= japan_vote.user %></td>
-        <td><%= japan_vote.tournament %></td>
-        <td><%= japan_vote.ranking %></td>
+        <td><%= japan_vote.user.username %></td>
+        <td><%= japan_vote.tournament.name %></td>
+        <td><%= japan_vote.ranking.name %></td>
         <td><%= link_to 'Show', japan_vote %></td>
         <td><%= link_to 'Edit', edit_japan_vote_path(japan_vote) %></td>
         <td><%= link_to 'Destroy', japan_vote, method: :delete, data: { confirm: 'Are you sure?' } %></td>

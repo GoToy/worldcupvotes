@@ -2,7 +2,7 @@
 
 <h1>Votes</h1>
 
-<%= pie_chart @chart_test %>
+<%= pie_chart @votes.joins(:team).group(:name).count %>
 
 <table>
   <thead>
@@ -17,9 +17,9 @@
   <tbody>
     <% @votes.each do |vote| %>
       <tr>
-        <td><%= vote.user %></td>
-        <td><%= vote.tournament %></td>
-        <td><%= vote.team %></td>
+        <td><%= vote.user.username %></td>
+        <td><%= vote.tournament.name %></td>
+        <td><%= vote.team.name %></td>
         <td><%= link_to 'Show', vote %></td>
         <td><%= link_to 'Edit', edit_vote_path(vote) %></td>
         <td><%= link_to 'Destroy', vote, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -2,17 +2,17 @@
 
 <p>
   <strong>User:</strong>
-  <%= @japan_vote.user %>
+  <%= @japan_vote.user.username %>
 </p>
 
 <p>
   <strong>Tournament:</strong>
-  <%= @japan_vote.tournament %>
+  <%= @japan_vote.tournament.name %>
 </p>
 
 <p>
   <strong>Ranking:</strong>
-  <%= @japan_vote.ranking %>
+  <%= @japan_vote.ranking.name %>
 </p>
 
 <%= link_to 'Edit', edit_japan_vote_path(@japan_vote) %> |
