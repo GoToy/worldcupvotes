@@ -11,11 +11,13 @@
     </div>
   <% end %>
 
+   <% if user_signed_in? %>
+
   <div class="field">
     <%= f.label :user_id %>
-    <%= @user.username %>    
-    <%= f.text_field :user_id %>
-  </div>
+      <%= current_user.username %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+     </div>
 
   <div class="field">
     <%= f.label :tournament_id %>
@@ -30,4 +32,8 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+ <% else %>
+      <p> not signed in </p>
+<% end %>
+
 <% end %>

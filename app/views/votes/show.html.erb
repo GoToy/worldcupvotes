@@ -2,17 +2,17 @@
 
 <p>
   <strong>User:</strong>
-  <%= @vote.user %>
+  <%= @vote.user.username %>
 </p>
 
 <p>
   <strong>Tournament:</strong>
-  <%= @vote.tournament %>
+  <%= @vote.tournament.name %>
 </p>
 
 <p>
   <strong>Team:</strong>
-  <%= @vote.team %>
+  <%= @vote.team.name %>
 </p>
 
 <%= link_to 'Edit', edit_vote_path(@vote) %> |

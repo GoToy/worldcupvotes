@@ -43,3 +43,14 @@ Team.create(name: 'ロシア')
 puts 'init tournaments'
 Tournament.delete_all
 Tournament.create(name: '2018 FIFAワールドカップ ロシア')
+
+puts 'init rankings'
+Ranking.delete_all
+Ranking.create(name: '優勝')
+Ranking.create(name: '準優勝')
+Ranking.create(name: '3位')
+Ranking.create(name: 'ベスト4')
+Ranking.create(name: 'ベスト8')
+Ranking.create(name: 'ベスト16')
+Ranking.create(name: '予選3位')
+Ranking.create(name: '予選4位')

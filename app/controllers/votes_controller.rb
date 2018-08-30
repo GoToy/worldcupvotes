@@ -5,6 +5,7 @@ class VotesController < ApplicationController
   # GET /votes.json
   def index
     @votes = Vote.all
+    @chart_test = [['2014', 60],['2015', 65], ['2016', 64]]
   end
 
   # GET /votes/1
