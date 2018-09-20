@@ -7,18 +7,21 @@
     <tr>
       <th>User</th>
       <th>Tournament</th>
+      <th>Vote Team</th>
+      <th>DateTime</th>
       <th>Body</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @forums.each do |forum| %>
       <tr>
-        <td><%= forum.user %></td>
-        <td><%= forum.tournament %></td>
+        <td><%= forum.user.username %></td>
+        <td><%= forum.tournament.name %></td>
+        <td><%= forum.user.votes.find_by(tournament_id: forum.tournament.id).team.name %></td>
+        <td><%= forum.created_at.strftime('%Y/%m/%d %H:%M') %></td>
         <td><%= forum.body %></td>
-        <td><%= link_to 'Show', forum %></td>
         <td><%= link_to 'Edit', edit_forum_path(forum) %></td>
         <td><%= link_to 'Destroy', forum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

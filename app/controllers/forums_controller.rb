@@ -5,6 +5,7 @@ class ForumsController < ApplicationController
   # GET /forums.json
   def index
     @forums = Forum.all
+    @votes = current_user.votes   
   end
 
   # GET /forums/1

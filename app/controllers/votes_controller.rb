@@ -5,7 +5,7 @@ class VotesController < ApplicationController
   # GET /votes.json
   def index
     @votes = Vote.all
-    @chart_test = [['2014', 60],['2015', 65], ['2016', 64]]
+    
   end
 
   # GET /votes/1
@@ -36,6 +36,9 @@ class VotesController < ApplicationController
         format.json { render json: @vote.errors, status: :unprocessable_entity }
       end
     end
+
+   
+
   end
 
   # PATCH/PUT /votes/1

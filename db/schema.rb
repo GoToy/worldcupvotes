@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180813092142) do
+ActiveRecord::Schema.define(version: 20180920105718) do
 
   create_table "forums", force: :cascade do |t|
     t.integer  "user_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20180813092142) do
     t.datetime "updated_at",    null: false
     t.index ["ranking_id"], name: "index_japan_votes_on_ranking_id"
     t.index ["tournament_id"], name: "index_japan_votes_on_tournament_id"
+    t.index ["user_id", nil], name: "index_japan_votes_on_user_id_and_tournament", unique: true
     t.index ["user_id"], name: "index_japan_votes_on_user_id"
   end
 
@@ -77,6 +78,7 @@ ActiveRecord::Schema.define(version: 20180813092142) do
     t.datetime "updated_at",    null: false
     t.index ["team_id"], name: "index_votes_on_team_id"
     t.index ["tournament_id"], name: "index_votes_on_tournament_id"
+    t.index ["user_id", nil], name: "index_votes_on_user_id_and_tournament", unique: true
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
